@@ -1,0 +1,15 @@
+body{ 
+    font-family: Courier, monospace;
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+em{
+    background-color: #FFF666;
+}
+
+a{
+    color: #06F;
+    text-decoration: none;
+}
+
