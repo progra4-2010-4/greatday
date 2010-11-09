@@ -12,6 +12,12 @@ module NavigationHelpers
       '/'
     when /la página raíz/
       '/'
+
+    when /la página de registro/
+      "/users/sign_up"
+    when /login/
+      "/users/sign_in"
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
