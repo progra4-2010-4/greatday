@@ -13,6 +13,8 @@ group :development, :test do
 	gem 'redgreen'
 end
 
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

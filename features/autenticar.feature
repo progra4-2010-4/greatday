@@ -4,20 +4,30 @@ Característica: Autenticar usuarios
 	Como un participante
 	Quiero estar identificado y autenticado
 
-Escenario: Un usuario no autenticado entra
-	Dado que no estoy autenticado
+Antecedentes:
+	Dado que los siguientes usuarios existen:
+	| username | email	     | password    |
+	| jgalt    | galt@domain.com | foobarbaz   |
+	| ragnard  | ragnar@net.com  | supersecret |
+
+Escenario: Un usuario autenticado entra
+	Dado que estoy autenticado como jgalt
 	Cuando voy a la página raíz
-	Entonces debería ver "Login"
-	Y debería ver "Register"
+	Entonces debería ver "jgalt"
+	Y debería ver "Logout"
+	Pero no debería ver "Register"
+	Y no debería ver "Login"
+	Y mostrarme la página
 
 Escenario: Un usuario se registra
         Dado que no estoy autenticado
         Cuando voy a la página de registro
-        Y completo "Email" con "correo@dominio.com"
-        Y completo "Password" con "foobar"
-        Y completo "Password confirmation" con "foobar"
+	Y completo "Username" con "lfborjas"
+        Y completo "Email" con "self@lfborjas.com"
+        Y completo "Password" con "supersecretstuff"
+        Y completo "Password confirmation" con "supersecretstuff"
         Y apreto "Sign up"
-        Entonces debería ver "Logout"
+        Entonces debería ver "signed up successfull"
         Y debería ver "correo@dominio.com"
         Y debería ver "signed up successfully"
 
