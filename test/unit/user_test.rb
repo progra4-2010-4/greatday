@@ -14,8 +14,8 @@ class UserTest < ActiveSupport::TestCase
 			:password => "barfoo"
 
 	 assert !u.save
-	 assert_equal 1, u.errors.size
 	 assert u.errors[:username].any?
+	 assert_equal 1, u.errors.size
 	end
 
 	test "a username must be unique" do
