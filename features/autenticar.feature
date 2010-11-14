@@ -33,4 +33,4 @@ Escenario: Un usuario autenticado entra
 	Y debería ver "Logout"
 	Pero no debería ver "Register"
 	Y no debería ver "Login"
-	Y mostrarme la página
+	Y mostrame la página
