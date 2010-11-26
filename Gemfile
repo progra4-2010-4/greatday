@@ -16,6 +16,7 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'
