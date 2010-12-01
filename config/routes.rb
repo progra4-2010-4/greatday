@@ -4,7 +4,7 @@ Greatday::Application.routes.draw do
   get "static/index"
   root :to => "static#index"
 
-  resources :photos, :only => [:index, :show, :new, :create], :new =>{:upload =>:post}
+  resources :photos, :only => [:index, :show, :new, :create], :new =>{:upload=>:post}
 
 # The priority is based upon order of creation:
   # first created -> highest priority.

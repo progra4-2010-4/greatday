@@ -1,9 +1,9 @@
 class PhotosController < ApplicationController
 	def upload
-		File.open(upload_path, 'w')do |f|
+		File.open(upload path, 'w')do |f|
 		 f.write request.raw_post
 		end
-	render :text =>"ok"
+		render :text =>"ok"
 	end
 	
 	def create
