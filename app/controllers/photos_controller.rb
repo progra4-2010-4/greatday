@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 	def upload
-		File.open(upload path, 'w')do |f|
+		File.open(upload_path, 'w')do |f|
 		 f.write request.raw_post
 		end
 		render :text =>"ok"
@@ -26,6 +26,6 @@ class PhotosController < ApplicationController
 	private
 	def upload_path
 		file_name = session[:session_id].to_s + '.jpg'
-		File.join(RAILS_ROOT, 'public', 'uploads', file_name)
+		File.join(::Rails.root.to_s, 'public', 'uploads', file_name)
 	end
 end
