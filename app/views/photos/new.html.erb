@@ -20,8 +20,12 @@ function upload_complete(msg){
 
 <input type="button" value="Take picture"
 		 onclick = "webcam.snap();"/>
-
-<%=form_for Photo.new, :html =>{:style => "display: none;"} do |f|%>
+<!--
+<input type="button" value="Take"/>
+ $(":button").click(function(){
+	webcam.snap();});
+-->
+<%=form_for @photo, :html =>{:style => ":display: none;"} do |f|%>
  <p>
    <%=f.label :description%><br />
    <%=f.text_field :description%>

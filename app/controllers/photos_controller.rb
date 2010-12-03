@@ -14,14 +14,21 @@ class PhotosController < ApplicationController
 	end
 	
 	def show
-		@photo = Photo.find(params[:id])
+		@photo = Photo.find params[:id]
 	end
 
 	def index
-		@photo = Photo.all
+		@photos = Photo.all
+	end
+
+	def new
+		@photo = Photo.new
+		respond_to do |format|
+			format.html # new.html.erb
+			format.xml  { render :xml => @photo }
+		end
+
 	end	
-
-
 
 	private
 	def upload_path

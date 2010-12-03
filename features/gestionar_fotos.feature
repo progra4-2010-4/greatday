@@ -1,4 +1,4 @@
-cenario: Un usuario autenticado toma una foto
+Escenario: Un usuario autenticado toma una foto
         Dado que estoy autenticado
         Cuando apreto "Tomar Foto"
         Entonces debería ver "Preview"
