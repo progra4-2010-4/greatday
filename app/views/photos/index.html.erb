@@ -2,7 +2,9 @@
 
 <ul>
 	<% @photos.each do |photo| %>
-	<ol><%= link_to image_tag(photo.image.url(:thumb)),photo %></ol>
+	<ol><%= link_to image_tag(photo.image.url(:thumb)),photo %>
+		<p><%=photo.description%></p>
+	</ol>
 	<% end %>
 </ul>
 <p>

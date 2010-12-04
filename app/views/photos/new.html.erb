@@ -1,15 +1,18 @@
+<h1>New Photo</h1>
+
 <div id="webcam"></div>
 <script type="text/javascript">
   webcam.set_swf_url('/webcam.swf');
-  webcam.set_api_url('<%=upload_photos_path%>');
+  webcam.set_api_url('<%=upload_user_photos_path%>');
   webcam.set_quality(90);
   webcam.set_shutter_sound(true, '/shutter.mp3');
   $('webcam').innerHTML = webcam.get_html(640,480);
   webcam.set_hook('onComplete', 'upload complete');
+
 function upload_complete(msg){
         if(msg == 'ok'){
-                $('new_photo').show();
-                $('photo_description').focus();
+                $('new_user_photo').show();
+                $('user_photo_description').focus();
         }else{
                 alert('And error occured');
                 webcam.reset();
@@ -20,11 +23,7 @@ function upload_complete(msg){
 
 <input type="button" value="Take picture"
 		 onclick = "webcam.snap();"/>
-<!--
-<input type="button" value="Take"/>
- $(":button").click(function(){
-	webcam.snap();});
--->
+
 <%=form_for @photo, :html =>{:style => ":display: none;"} do |f|%>
  <p>
    <%=f.label :description%><br />
@@ -32,7 +31,7 @@ function upload_complete(msg){
  </p>
  <p>
    <%=f.submit "Save the photo"%>
-   or <%=link_to "Take another", new_photo_path%>
+   or <%=link_to "Take another", new_user_photo_path%>
  </p>
 <%end%>
 

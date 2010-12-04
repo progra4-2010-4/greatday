@@ -1,8 +1,8 @@
-<h1>Photos</h1>
+<h1>My Photo</h1>
 <p><%= image_tag @photo.image.url(:medium) %></p>
 <p>
  <strong>Description:</strong><br />
- <%=h @photo.description %>
+ <p><%= @photo.description %></p>
 </p>
 <p>
  <%= link_to "Take a new picture", new_photo_path %>| 

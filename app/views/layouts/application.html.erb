@@ -15,6 +15,8 @@
 		<%=link_to "Login", new_user_session_path%>
 		<%=link_to "Register", new_user_registration_path%>
 	   <%else%>
+		<%=link_to "Take new photo", new_user_photo_path%>
+		<%=link_to "See all photos", user_photos_path%>
 		<%=current_user.username%>
 		<%=link_to "Logout", destroy_user_session_path%>
 	   <%end%>
