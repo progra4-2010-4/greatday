@@ -4,5 +4,6 @@ log/*.log
 tmp/**/*
 *~
 *.sw[op]
-public/upload/*
+public/upload/*.jpg
+
 

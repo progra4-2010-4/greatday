@@ -35,6 +35,7 @@ class PhotosController < ApplicationController
 
 	def new
 		@photo = Photo.new
+		@user = current_user
 		respond_to do |format|
 			format.html # new.html.erb
 			format.xml  { render :xml => @photo }
