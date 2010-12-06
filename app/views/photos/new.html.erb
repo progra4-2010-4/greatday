@@ -24,14 +24,14 @@ function upload_complete(msg){
 <input type="button" value="Take picture"
 		 onclick = "webcam.snap();"/>
 
-<%=form_for @photo.user, :html =>{:style => ":display: none;"} do |f|%>
+<%=form_for [current_user,@photo], :html =>{:style => ":display: none;"} do |f|%>
  <p>
    <%=f.label :description%><br />
    <%=f.text_field :description%>
  </p>
  <p>
    <%=f.submit "Save the photo"%>
-   or <%=link_to "Take another", new_user_photo_path%>
+   or <%=link_to "Take another", new_user_photo_path(current_user)%>
  </p>
 <%end%>
 
