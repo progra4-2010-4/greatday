@@ -1,0 +1,14 @@
+body{
+    background-color: orange;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0 auto;
+    width: 900px;
+    background-image: url("http://krazykk.files.wordpress.com/2008/04/smiley20face20have20a20great20day.jpg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+header, footer{
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+}
