@@ -3,7 +3,7 @@
 <div id="webcam"></div>
 <script type="text/javascript">
   webcam.set_swf_url('/webcam.swf');
-  webcam.set_api_url('<%=upload_user_photos_path%>');
+  webcam.set_api_url('<%=upload_user_photos_path(current_user)%>');
   webcam.set_quality(90);
   webcam.set_shutter_sound(true, '/shutter.mp3');
   $('webcam').innerHTML = webcam.get_html(640,480);

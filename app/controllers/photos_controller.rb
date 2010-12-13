@@ -7,16 +7,16 @@ class PhotosController < ApplicationController
 	end
 	
 	def create
-		@photo = Photo.new(params[:photo])
+		@photo = Photo.new params[:photo]
 		@photo.user = current_user
-		@photo.user.image = File.new(upload_path)
 		@photo.save
-		redirect_to @photo
+
 	end
 	
 	def show
 		#@photo = Photo.find params[:id]
-		@photo = current_user.photos.find params[:id]
+		@photos = current_user.photos.order("create_at DESC")
+		reder :index
 		respond_to do |format|
     		 format.html # show.html.erb
 		 format.xml  { render :xml => @post }
@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
 
 	def index
 		#@photos = Photo.all
-		@photos = current_user.photos.order "created_at DESC"
+		@photos = Photo.find params[:user_id], :order=> "created_at DESC"
 		@user = current_user
 		respond_to do |format|
    		 format.html # index.html.erb
