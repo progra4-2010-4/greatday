@@ -1,5 +1,5 @@
 <h1>My Photo</h1>
-<p><%= image_tag @photo.user.url(:medium) %></p>
+<p><%= image_tag(@photo.image.url(:medium))%></p>
 <p>
  <strong>Description:</strong><br />
  <p><%= @photo.description %></p>
