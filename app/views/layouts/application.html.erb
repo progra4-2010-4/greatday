@@ -8,23 +8,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<header>
+      <header>
 	<h1><%=link_to "Greatday", root_path%></h1>
-	<nav>
-	   <%unless user_signed_in?%>
-		<%=link_to "Login", new_user_session_path%>
-		<%=link_to "Register", new_user_registration_path%>
-	   <%else%>
-		<%=link_to "Take new photo", new_user_photo_path(current_user)%>
-		<%=link_to "See all photos", user_photos_path(current_user)%>
-		<%=current_user.username%>
-		<%=link_to "Logout", destroy_user_session_path%>
-	   <%end%>
-	</nav>
-	</header>
-	<p class="notice"><%=flash[:notice]%></p>
-	<p class="error"><%=flash[:error]%></p>
-	<%= yield %>
+        <nav>
+        <%if current_user?%>
+           <%= image_tag current_user.picture_url %>
+           <%= link_to current_user.name,  current_user.account_url %>
+           <%= link_to "Logout", "/logout" %>
+        <%else%>
+           <%= link_to "Login", "/login" %>
+          <%end%>
+          </nav>
+       </header>
+     <%= yield %>
 	<footer> Greatday 2010. Una aplicación divertida</footer>
+
 </body>
 </html>

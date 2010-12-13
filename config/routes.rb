@@ -1,5 +1,5 @@
 Greatday::Application.routes.draw do
-  devise_for :users, :path=>"auth"
+
   resources(:users, :only=>[:show])do
 	resources :photos, :only=>[:index, :show, :new, :create] do
 	  post 'upload', :on=>:collection
