@@ -8,7 +8,12 @@ body{
     background-position: right bottom;
 }
 header, footer{
-    background-color: orange;
-    color: white;
+    background-color: yellow;
+    color: gray;
     border-radius: 5px;
 }
+
+a:visited {
+  color: black;
+}
+
