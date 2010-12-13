@@ -1,9 +1,9 @@
 <h1>All Photos</h1>
 
 <ul>
-	<%[current_user, @photos] each do |photo| %>
-	<ol><%= link_to image_tag(photo.url(:thumb)),photo %>
-		<p><%=photo.description%></p>
+	<%[current_user, @photos].each do |photo| %>
+	<ol><%= link_to image_tag(@photos.image.url(:thumb)),photo=>:user_id%>
+		<p><%=@photos.description%></p>
 	</ol>
 	<% end %>
 </ul>
