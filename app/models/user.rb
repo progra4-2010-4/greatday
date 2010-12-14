@@ -1,9 +1,15 @@
-class User < Omnisocial::User
-  # Make any customisations here
-  # Paperclip
-  has_attached_file :photo,
-    :styles => {
-      :thumb=> "100x100#",
-      :small  => "150x150>" }
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  
+  validates_presence_of :username
+  validates_uniqueness_of :username
+
+  has_many :photos
 
 end

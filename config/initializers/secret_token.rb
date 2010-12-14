@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Instrocktorbuk::Application.config.secret_token = '0e7a790c7a09fb0cf111ea474523a4ab9e5ccbb2f47a9b336009d4254cd35ae4fd389dfc27cc8247e047c5a25fc4e05a152e50647fb575ade6de0a9f2cb41a56'
+Greatday::Application.config.secret_token = '8b7b43245379251dafcd4c99c8e13a2a4b61bfe49f3bc23263770f4bf5e6641a3b1ec4da67e1272a2e26e49b4dce4598993292e6a72c2ce7e9f628b09c2fedbd'

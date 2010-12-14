@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <title>Greatday</title> 
-
+  <title>Greatday</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'webcam'%>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<header>
-        
-        <h1 style=text-align:center><%=link_to "Greatday","/"%></h1>
-	
-            <%unless current_user!=false%>
-            <div style = "position:absolute;left:875px;text-decoration:underline;font-size:18px">
-            <%=link_to "Login", "/login"%>
-            </div>
+	<header>
+	<h1><%=link_to "Greatday", root_path%></h1>
+	<nav>
+	   <%unless user_signed_in?%>
+		<%=link_to "Login", new_user_session_path%>
+		<%=link_to "Register", new_user_registration_path%>
 	   <%else%>
-		 <%=link_to "Take new photo", new_photo_path%>
-                <%=link_to "See all photos", photos_path%>
-		<%=current_user.name%>
-            <%= link_to "Logout","/logout" %>
+		<%=link_to "Take new photo", new_user_photo_path(current_user)%>
+		<%=link_to "See all photos", user_photos_path(current_user)%>
+		<%=current_user.username%>
+		<%=link_to "Logout", destroy_user_session_path%>
 	   <%end%>
-           
-
-
- </header>
+	</nav>
+	</header>
 	<p class="notice"><%=flash[:notice]%></p>
 	<p class="error"><%=flash[:error]%></p>
-
-<%= yield %>
-<footer > <b>¡Greatday 2010! Una aplicación super divertida. <b/> </footer>
-<img src = "http://krazykk.files.wordpress.com/2008/04/smiley20face20have20a20great20day.jpg" alt= "happy face" />
+	<%= yield %>
+	<footer> Greatday 2010. Una aplicación divertida</footer>
 </body>
 </html>
