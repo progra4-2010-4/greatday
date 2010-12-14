@@ -1,15 +1,15 @@
 development:
-  bucket_name: greatday
-  access_key_id: AKIAI3JFD57QB5EP7NCQ
-  secret_access_key: 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
+  bucket_name: instrocktorbuk
+  access_key_id: <AKIAIO5KT6PK4MCU7HSA>
+  secret_access_key: <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>
 
 test:
-  bucket_name: greatday
-  access_key_id: AKIAI3JFD57QB5EP7NCQ
-  secret_access_key: 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
+  bucket_name: instrocktorbuk
+  access_key_id: <AKIAIO5KT6PK4MCU7HSA>
+  secret_access_key: <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>
 
 production:
-  bucket_name: greatday
-  access_key_id: AKIAI3JFD57QB5EP7NCQ
-  secret_access_key: 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
+  bucket_name: instrocktorbuk
+  access_key_id: <AKIAIO5KT6PK4MCU7HSA>
+  secret_access_key: <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>
 

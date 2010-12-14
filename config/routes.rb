@@ -1,19 +1,22 @@
-Greatday::Application.routes.draw do
-  devise_for :users, :path=>"auth"
-  resources(:users, :only=>[:show])do
-	resources :photos, :only=>[:index, :show, :new, :create] do
-	  post 'upload', :on=>:collection
-	end
+Instrocktorbuk::Application.routes.draw do
+  get "user/create"
+
+  get "user/new"
+
+  get "user/update"
+
+  get "user/destroy"
+
+  get "user/edit"
+  
+  get "user/show"
+
+  root :to => "static#index"
+  resources :photos, :only=>[:index, :show, :new, :create] do
+        post 'upload', :on=>:collection
   end
 
-  get "static/index"
-  root :to => "static#index"
-
-  #resources :photos, :only => [:index, :show, :new, :create] do
-  #	post 'upload', :on => :collection
-  #end
-
-# The priority is based upon order of creation:
+  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
@@ -68,5 +71,5 @@ Greatday::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))
+  # match ':controller(/:action(/:id(.:format)))'
 end

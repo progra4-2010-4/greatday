@@ -1,0 +1,8 @@
+#language
+	Caracteristica: votar a la solucion encontrada.
+		poder votar dependiendo si la informacion 
+		encontrada fue util o no le fue util.
+	Escenario: poder tener dos opciones, 
+		una si la informacion obtenida de los 
+		solucionarios les fue util, o la otra 
+		opcion si esta informacion no les fue util.

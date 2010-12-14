@@ -1,10 +1,10 @@
-<h1>My Photo</h1>
-<p><%= image_tag(@photo.image.url(:medium))%></p>
+<h1>Photo</h1>
+<p><%= image_tag @photo.image.url(:medium) %></p>
 <p>
- <strong>Description:</strong><br />
- <p><%= @photo.description %></p>
+<strong>Description:</strong><br />
+<%=h @photo.description %>
 </p>
 <p>
- <%= link_to "Take a new picture", new_user_photo_path(current_user) %>| 
- <%= link_to "See all pictures", user_photos_path(current_user) %>
+<%= link_to "Take a new picture", new_photo_path %>
+| <%= link_to "See all pictures", photos_path %>
 </p>
