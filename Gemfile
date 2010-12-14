@@ -15,7 +15,8 @@ group :development, :test do
 	gem 'launchy'
 end
 
-gem 'omnisocial'
+gem 'devise'
+gem 'aws-s3'
 gem 'paperclip'
 
 # Use unicorn as the web server

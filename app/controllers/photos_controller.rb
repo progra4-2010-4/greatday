@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
 	
 	def show
 		#@photo = Photo.find params[:id]
-		@photos= Photo.find params[:id]
+		@photos= Photo.find params[:user_id]
 		@user = current_user
 		reder :index
 		respond_to do |format|
@@ -27,8 +27,8 @@ class PhotosController < ApplicationController
 
 	def index
 		#@photos = Photo.all
-		@photos = Photo.find params[:user_id]
 		@user = current_user
+		@photos = Photo.find params[:user_id]
 		respond_to do |format|
    		 format.html # index.html.erb
 		 format.xml  { render :xml => @posts }

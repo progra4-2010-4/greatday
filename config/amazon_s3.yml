@@ -1,0 +1,15 @@
+development:
+  bucket_name: greatday
+  access_key_id: AKIAI3JFD57QB5EP7NCQ
+  secret_access_key: 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
+
+test:
+  bucket_name: greatday
+  access_key_id: AKIAI3JFD57QB5EP7NCQ
+  secret_access_key: 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
+
+production:
+  bucket_name: greatday
+  access_key_id: AKIAI3JFD57QB5EP7NCQ
+  secret_access_key: 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
+
